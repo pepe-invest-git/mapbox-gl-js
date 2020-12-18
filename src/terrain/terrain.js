@@ -664,8 +664,9 @@ export class Terrain extends Elevation {
             drawTerrainRaster(painter, this, psc, drawAsRasterCoords, this._updateTimestamp);
         }
 
+        const nextLayer = currLayer === startLayer && !this.renderCached ? startLayer + 1 : currLayer;
         this.renderCached = false;
-        return currLayer === startLayer ? startLayer + 1 : currLayer;
+        return nextLayer;
     }
 
     renderCacheEfficiency(): number {
