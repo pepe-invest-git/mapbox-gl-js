@@ -697,9 +697,7 @@ export class Terrain extends Elevation {
             }
         }
 
-        const renderableLayerCount = drapedLayerCount
-            + cacheableLayerCount
-            + uncacheableLayerCount;
+        const renderableLayerCount = drapedLayerCount + cacheableLayerCount + uncacheableLayerCount;
 
         return (1.0 - uncacheableLayerCount / renderableLayerCount) * 100.0;
     }
